@@ -11,3 +11,4 @@ cookbooks
 vendor/cookbooks
 build_timestamp
 ldd.out
+Gemfile.lock
