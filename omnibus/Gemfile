@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 
 gem 'omnibus', github: 'chef/omnibus'
 gem 'omnibus-software', github: 'chef/omnibus-software'
-gem 'kitchen-wpar', github: "chef/kitchen-wpar"
+gem 'kitchen-wpar', git: 'git@github.com:chef/kitchen-wpar'
 
 # This development group is installed by default when you run `bundle install`,
 # but if you are using Omnibus in a CI-based infrastructure, you do not need
