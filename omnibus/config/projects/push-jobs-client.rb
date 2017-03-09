@@ -57,7 +57,7 @@ override :libzmq,         version: "4.0.5"
 dependency "preparation"
 dependency "rb-readline"
 # dependency "opscode-pushy-client"
-dependency "libzmq"
+dependency "rbzmq"
 dependency "version-manifest"
 dependency "clean-static-libs"
 
