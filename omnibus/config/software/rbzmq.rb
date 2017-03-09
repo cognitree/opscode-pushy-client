@@ -15,6 +15,8 @@
 #
 
 name "rbzmq"
+default_version "tball/aix"
+source git: "git@github.com:chef/rbzmq.git"
 
 # license "MIT"
 # license_file "https://raw.githubusercontent.com/sparklemotion/nokogiri/master/LICENSE.md"
