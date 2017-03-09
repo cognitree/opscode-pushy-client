@@ -52,11 +52,14 @@ dependency "rubygems"
 build do
   env = with_standard_compiler_flags(with_embedded_path)
 
-  gem_command = [ "install rbzmq.gemspec" ]
-  gem_command += [
+  gem "build rbzmq.gemspec", env: env
+
+  gem_command = [
+    "install rbzmq*.gem",
     "--",
     "--use-system-libraries",
     "--with-zmq-dir==#{install_dir}/embedded",
+    "--no-doc"
   ]
 
   gem gem_command.join(" "), env: env
