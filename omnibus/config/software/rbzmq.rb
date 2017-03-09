@@ -16,15 +16,14 @@
 
 name "rbzmq"
 
-license "MIT"
-license_file "https://raw.githubusercontent.com/sparklemotion/nokogiri/master/LICENSE.md"
-# We install only nokogiri from rubygems here.
-skip_transitive_dependency_licensing true
-
-dependency "ruby"
+# license "MIT"
+# license_file "https://raw.githubusercontent.com/sparklemotion/nokogiri/master/LICENSE.md"
+# # We install only nokogiri from rubygems here.
+# skip_transitive_dependency_licensing true
 
 dependency "libzmq"
 dependency "libsodium"
+dependency "ruby"
 dependency "rubygems"
 
 #
