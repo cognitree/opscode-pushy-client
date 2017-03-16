@@ -14,7 +14,9 @@
 # limitations under the License.
 #
 
-name          "push-jobs-client"
+# TODO description
+
+name          "push-jobs-client-aix"
 friendly_name "Push Jobs Client"
 maintainer    "Chef Software, Inc. <maintainers@chef.io>"
 homepage      "https://www.chef.io"
@@ -33,9 +35,9 @@ if windows?
   # NOTE: Ruby DevKit fundamentally CANNOT be installed into "Program Files"
   #       Native gems will use gcc which will barf on files with spaces,
   #       which is only fixable if everyone in the world fixes their Makefiles
-  install_dir  "#{default_root}/opscode/#{name}"
+  install_dir  "#{default_root}/opscode/push-jobs-client"
 else
-  install_dir "#{default_root}/#{name}"
+  install_dir "#{default_root}/push-jobs-client"
 end
 
 # Chef has a loose constraint on Ohai (< 9 for the gem, master for Omnibus),
@@ -56,6 +58,7 @@ override :libzmq,         version: "4.0.5"
 
 dependency "preparation"
 dependency "rb-readline"
+dependency "rbzmq"
 dependency "opscode-pushy-client"
 dependency "version-manifest"
 dependency "clean-static-libs"

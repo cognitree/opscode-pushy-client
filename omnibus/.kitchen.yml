@@ -20,25 +20,56 @@ provisioner:
   require_chef_omnibus: true # Always install the latest version of Chef
 
 platforms:
-  - name: aix-6.1
-    driver:
-      user: root
-      password: <%= ENV['AIX_61_WPAR_PASSWORD'] %>
-    driver_plugin: wpar
-    driver_config:
-      lpar_ip: 172.31.10.17
-      lpar_user: root
-      lpar_password: <%= ENV['AIX_61_LPAR_PASSWORD'] %>
-      # Try a new one if this one is taken
-      wpar_ip: 172.31.10.161
-      wpar_user: root
-      wpar_password: <%= ENV['AIX_61_WPAR_PASSWORD'] %>
   - name: centos-5.10
     run_list: yum-epel::default
   - name: centos-6.5
     run_list: yum-epel::default
   - name: centos-7.0
     run_list: yum-epel::default
+    transport:
+      username: ec2-user
+      ssh_key: /Users/tball/.chef/keys/tyler_provisioning_test
+    driver:
+      name: ec2
+      aws_ssh_key_id: tyler_provisioning_test
+      region: us-east-1
+      availability_zone: d
+      require_chef_omnibus: true
+      iam_profile_name: aws-opsworks-cm-ec2-role
+      # ebs_volume_size: 20,
+      # ebs_delete_on_termination: 'true'
+      #ebs_device_name: '/dev/sda1'
+      associate_public_ip: true
+      subnet_id: subnet-46b55431
+      security_group_ids: sg-8c9d4ff3
+      instance_type: t2.micro
+      #price: 0.131
+      # username: ec2-user
+      # retryable_tries: 2
+      # retryable_sleep: 5
+      interface: public
+      #user_data: echo 'foo'
+      #private_ip_address: 172.31.48.101
+      image_id: ami-9be6f38c
+      # block_device_mappings:
+      # - ebs_device_name: /dev/sda1
+      #   ebs_volume_size: 20
+      #   ebs_delete_on_termination: true
+      # - ebs_device_name: /dev/sda2
+      #   ebs_volume_type: gp2
+      #   ebs_virtual_name: test
+      #   ebs_volume_size: 15
+      #   ebs_delete_on_termination: true
+      # - ebs_device_name: /dev/sda3
+      #   ebs_volume_size: 100
+      #   ebs_delete_on_termination: true
+      #   ebs_volume_type: io1
+      #   ebs_iops: 100
+      #http_proxy: nil
+      tags:
+        X-Contact: tball
+        X-Customer: Citi
+        X-Dept: Eng
   - name: debian-7.2.0
     run_list: apt::default
   - name: debian-7.4
@@ -95,6 +126,19 @@ platforms:
   - name: windows-2008r2-standard
     driver:
       box: chef/windows-server-2008r2-standard # private
+  - name: aix-6.1
+    driver:
+      user: root
+      password: <%= ENV['AIX_61_WPAR_PASSWORD'] %>
+    driver_plugin: wpar
+    driver_config:
+      lpar_ip: 172.31.10.17
+      lpar_user: root
+      lpar_password: <%= ENV['AIX_61_LPAR_PASSWORD'] %>
+      # Try a new one if this one is taken
+      wpar_ip: 172.31.10.161
+      wpar_user: root
+      wpar_password: <%= ENV['AIX_61_WPAR_PASSWORD'] %>
 
 attribute_defaults: &attribute_defaults
   build_user:          vagrant
