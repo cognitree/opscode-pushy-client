@@ -17,9 +17,6 @@ Gem::Specification.new do |gem|
 
   gem.add_dependency "chef", "~> 12.8"
   gem.add_dependency "ohai", "~> 8.6"
-  # TODO move this to gemfile and exclude as part of the AIX build
-  # TODO make sure this doesn't break other systems
-  gem.add_dependency "ffi-rzmq"
   gem.add_dependency "uuidtools"
 
   %w(rake rdoc rspec rspec_junit_formatter).each do |dep|
