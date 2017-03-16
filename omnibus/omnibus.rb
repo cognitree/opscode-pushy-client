@@ -13,7 +13,8 @@
 #
 # Uncomment this line to change the default base directory to "local"
 # -------------------------------------------------------------------
-base_dir './local'
+# TODO on AIX build this to a better root dir so we don't get super long paths
+# base_dir './local'
 #
 # Alternatively you can tune the individual values
 # ------------------------------------------------
