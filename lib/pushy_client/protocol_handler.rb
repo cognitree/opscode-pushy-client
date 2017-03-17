@@ -134,7 +134,7 @@ class PushyClient
         end
       end
 
-      Chef::Log.info "[#{node_name}] Starting ZMQ version #{LibZMQ.version}"
+      Chef::Log.info "[#{node_name}] Starting ZMQ version #{ZMQ.version}"
 
       # Server heartbeat socket
       Chef::Log.info "[#{node_name}] Listening for server heartbeat at #{@server_heartbeat_address}"
