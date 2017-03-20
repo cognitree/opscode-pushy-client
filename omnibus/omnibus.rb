@@ -13,7 +13,7 @@
 #
 # Uncomment this line to change the default base directory to "local"
 # -------------------------------------------------------------------
-base_dir File.expand_path('./local', File.dirname(__FILE__))
+base_dir "/opt/omnibus-toolchain/local"
 #
 # Alternatively you can tune the individual values
 # ------------------------------------------------
