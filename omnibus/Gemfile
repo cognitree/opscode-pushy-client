@@ -14,5 +14,4 @@ group :development do
   gem 'winrm-fs'
   # TODO delete these
   gem 'kitchen-wpar', git: 'git@github.com:chef/kitchen-wpar'
-  gem 'kitchen-ec2', git: 'git@github.com:test-kitchen/kitchen-ec2.git'
 end

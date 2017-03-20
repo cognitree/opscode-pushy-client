@@ -13,8 +13,7 @@
 #
 # Uncomment this line to change the default base directory to "local"
 # -------------------------------------------------------------------
-# TODO on AIX build this to a better root dir so we don't get super long paths
-# base_dir './local'
+base_dir File.expand_path('./local', File.dirname(__FILE__))
 #
 # Alternatively you can tune the individual values
 # ------------------------------------------------

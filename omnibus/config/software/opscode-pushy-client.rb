@@ -44,12 +44,13 @@ end
 
 relative_path "opscode-pushy-client"
 
-dependency "rbzmq"
 dependency "rubygems"
 dependency "bundler"
 dependency "appbundler"
 dependency "chef"
 dependency "openssl-customization"
+# TODO move to top since it is changing less
+dependency "rbzmq"
 
 if windows?
   dependency "libzmq4x-windows"
