@@ -50,7 +50,7 @@ end
 
 # Forked 4.2.2 from Github
 version "tball/aix" do
-  source git: "git@github.com:tyler-ball/libzmq.git", branch: "tball/aix"
+  source git: "git@github.com:tyler-ball/libzmq.git"
   dependency "libsodium"
 end
 
