@@ -50,7 +50,7 @@ override :ruby,           version: "2.1.8"
 override :appbundler,     version: "v0.9.0"
 
 # Short term fix to keep from breaking old client build process
-override :libzmq,         version: "4.2.2"
+override :libzmq,         version: "4.0.5"
 
 ######
 
