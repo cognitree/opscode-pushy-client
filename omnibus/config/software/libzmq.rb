@@ -70,8 +70,8 @@ build do
   end
 
   if aix?
-    env['CFLAGS'] = "-q64 -I/opt/push-jobs-client/embedded/include -O"
-    env['CPPFLAGS'] = "-q64 -I/opt/push-jobs-client/embedded/include -O"
+    env['CFLAGS'] = "-q64 -I/opt/push-jobs-client/embedded/include -O -g"
+    env['CPPFLAGS'] = "-q64 -I/opt/push-jobs-client/embedded/include -O -g"
   end
 
 
