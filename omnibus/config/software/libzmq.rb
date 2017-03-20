@@ -37,26 +37,34 @@ version "2.1.11" do
 end
 
 version "4.2.1" do
-  source md5: "820cec2860a72c3257881a394d83bfc0"
+  source md5: "820cec2860a72c3257881a394d83bfc0",
+    url: "https://github.com/zeromq/libzmq/releases/download/v#{version}/zeromq-#{version}.tar.gz"
+  dependency "libsodium"
+end
+
+version "4.2.2" do
+  source md5: "52499909b29604c1e47a86f1cb6a9115",
+    url: "https://github.com/zeromq/libzmq/releases/download/v#{version}/zeromq-#{version}.tar.gz"
   dependency "libsodium"
 end
 
 version "4.1.4" do
-  source md5: "a611ecc93fffeb6d058c0e6edf4ad4fb"
+  source md5: "a611ecc93fffeb6d058c0e6edf4ad4fb",
+    url: "http://download.zeromq.org/zeromq-#{version}.tar.gz"
   dependency "libsodium"
 end
 version "4.0.5" do
-  source md5: "73c39f5eb01b9d7eaf74a5d899f1d03d"
+  source md5: "73c39f5eb01b9d7eaf74a5d899f1d03d",
+    url: "http://download.zeromq.org/zeromq-#{version}.tar.gz"
   dependency "libsodium"
 end
 version "4.0.4" do
-  source md5: "f3c3defbb5ef6cc000ca65e529fdab3b"
+  source md5: "f3c3defbb5ef6cc000ca65e529fdab3b",
+    url: "http://download.zeromq.org/zeromq-#{version}.tar.gz"
   dependency "libsodium"
 end
 
 relative_path "zeromq-#{version}"
-source url: "https://github.com/zeromq/libzmq/releases/download/v#{version}/zeromq-#{version}.tar.gz" #http://download.zeromq.org/zeromq-#{version}.tar.gz"
-source url: "http://download.zeromq.org/zeromq-#{version}.tar.gz"
 
 build do
   env = with_standard_compiler_flags(with_embedded_path)
