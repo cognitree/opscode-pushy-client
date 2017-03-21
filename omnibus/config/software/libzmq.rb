@@ -49,7 +49,7 @@ version "4.2.2" do
 end
 
 # Forked 4.2.2 from Github
-version "tball/aix" do
+version "master" do
   source git: "git@github.com:tyler-ball/libzmq.git"
   dependency "libsodium"
 end
@@ -81,7 +81,7 @@ build do
   # centos 5 has an old version of gcc (4.2.1) that has trouble with
   # long long and c++ in pedantic mode
   # This patch is specific to zeromq4
-  if version.satisfies?(">= 4")
+  if version == "master" || version.satisfies?(">= 4")
     patch source: "zeromq-4.0.5_configure-pedantic_centos_5.patch", env: env if el?
   end
 
